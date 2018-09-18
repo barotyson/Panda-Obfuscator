@@ -87,19 +87,27 @@ namespace PandaObfuscator
                 pandaContext.addIGModule(pandaProtection);
 
             }
-            pandaEngine.runModules(pandaContext);
+            if (basic.Checked)
+                pandaEngine.runModules(PandaState.Basic, pandaContext);
+            else
+                pandaEngine.runModules(PandaState.Normal, pandaContext);
+
             if (pandaContext.Write())
                 MessageBox.Show("File Obfuscated!");
             else
                 MessageBox.Show("Cannot Obfuscate the file for some reasons!");
+            reNew();
         }
         public void reNew()
         {
+            darkTextBox1.Text = "";
             darkSectionPanel2.Enabled = false;
             nameLbl.Text = "Name: ";
             idLbl.Text = "Id: ";
             DescLbl.Text = "Description: ";
             authorLbl.Text = "Author: ";
+            pandaContext = null;
+            pandaEngine = null;
         }
     }
 }

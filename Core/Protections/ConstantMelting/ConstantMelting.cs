@@ -12,8 +12,12 @@ namespace Core.Protections.ConstantMelting
 {
     public class ConstantMelting
     {
-        private static Generator generator = new Generator();
-        public static void Melting(PandaContext pandaContext)
+        private Generator generator = new Generator();
+        public ConstantMelting(PandaContext pandaContext)
+        {
+            Melting(pandaContext);
+        }
+        public void Melting(PandaContext pandaContext)
         {
             foreach(TypeDef type in pandaContext.moduleDef.Types.ToArray())
             {
@@ -24,7 +28,7 @@ namespace Core.Protections.ConstantMelting
                 }
             }
         }
-        private static void StringOutliner(MethodDef methodDef)
+        private void StringOutliner(MethodDef methodDef)
         {
             if (ObfuscationMethodUtil.canObfuscate(methodDef))
             {
@@ -40,7 +44,7 @@ namespace Core.Protections.ConstantMelting
                 }
             }
         }
-        private static void IntegerOutliner(MethodDef methodDef)
+        private void IntegerOutliner(MethodDef methodDef)
         {
             if (ObfuscationMethodUtil.canObfuscate(methodDef))
             {

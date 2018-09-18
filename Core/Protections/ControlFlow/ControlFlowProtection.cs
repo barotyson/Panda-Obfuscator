@@ -16,9 +16,9 @@ namespace Core.Protections.ControlFlow
 
         public override string Author => "CodeOfDark";
 
-        public override void Execute(PandaContext pandaContext)
+        public override void Execute(PandaState pandaState, PandaContext pandaContext)
         {
-            ControlFlow.Execute(pandaContext);
+            new ControlFlow(pandaState, pandaContext);
         }
 
         public override void Register(PandaContext pandaContext)

@@ -16,9 +16,20 @@ namespace Core.Protections.IntMath
 
         public override string Author => "CodeOfDark";
 
-        public override void Execute(PandaContext pandaContext)
+        public override void Execute(PandaState pandaState, PandaContext pandaContext)
         {
-            IntMath.Execute(pandaContext);
+            switch(pandaState)
+            {
+                case PandaState.Basic:
+                    new IntMath(pandaContext);
+                    break;
+                case PandaState.Normal:
+                    for(int i = 0; i < 1; i++)
+                    {
+                        new IntMath(pandaContext);
+                    }
+                    break;
+            }
         }
 
         public override void Register(PandaContext pandaContext)

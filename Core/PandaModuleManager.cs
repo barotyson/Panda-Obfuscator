@@ -18,10 +18,11 @@ namespace Core
             return new List<PandaProtection>()
             {
                 new StringEncodingProtection(),
+                new ControlFlowProtection(),
                 new ConstantMeltingProtection(),
                 new IntMathProtection(),
-                new ControlFlowProtection(),
                 new ReferenceProxyProtection()
+                
             };
         }
     }

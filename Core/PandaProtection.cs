@@ -13,6 +13,6 @@ namespace Core
         public abstract string Id { get; }
         public abstract string Author { get; }
         public abstract void Register(PandaContext pandaContext);
-        public abstract void Execute(PandaContext pandaContext);
+        public abstract void Execute(PandaState pandaState, PandaContext pandaContext);
     }
 }

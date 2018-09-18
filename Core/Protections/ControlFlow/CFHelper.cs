@@ -4,6 +4,7 @@ using dnlib.DotNet.Emit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,6 +28,12 @@ namespace Core.Protections.ControlFlow
             Block block = new Block();
             int Id = 0;
             int usage = 0;
+            block.ID = Id;
+            Id++;
+            block.nextBlock = block.ID + 1;
+            block.instructions.Add(Instruction.Create(OpCodes.Nop));
+            blocks.blocks.Add(block);
+            block = new Block();
             foreach (Instruction instruction in method.Body.Instructions)
             {
                 int pops = 0;

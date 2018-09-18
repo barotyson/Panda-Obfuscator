@@ -16,9 +16,9 @@ namespace Core.Protections.ConstantMelting
 
         public override string Author => "CodeOfDark";
 
-        public override void Execute(PandaContext pandaContext)
+        public override void Execute(PandaState pandaState, PandaContext pandaContext)
         {
-            ConstantMelting.Melting(pandaContext);
+            new ConstantMelting(pandaContext);
         }
 
         public override void Register(PandaContext pandaContext)

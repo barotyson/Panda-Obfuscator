@@ -51,6 +51,7 @@
     <Compile Include="Helper\Generator\Context\Integers\Randomizer.cs" />
     <Compile Include="Helper\Generator\Context\Strings\Randomizer.cs" />
     <Compile Include="Helper\Generator\Context\Strings\RandomizerType.cs" />
+    <Compile Include="Helper\Utils.cs" />
     <Compile Include="ObfuscationUtils\ObfuscationMethodUtil.cs" />
     <Compile Include="PandaContext.cs" />
     <Compile Include="PandaEngine.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="PandaMarker.cs" />
     <Compile Include="PandaModuleManager.cs" />
     <Compile Include="PandaProtection.cs" />
+    <Compile Include="PandaState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Protections\ConstantMelting\ConstantMelting.cs" />
     <Compile Include="Protections\ConstantMelting\ConstantMeltingProtection.cs" />
@@ -71,8 +73,13 @@
     <Compile Include="Protections\IntMath\INTMHelper.cs" />
     <Compile Include="Protections\ReferenceProxy\ReferenceProxy.cs" />
     <Compile Include="Protections\ReferenceProxy\ReferenceProxyProtection.cs" />
+    <Compile Include="Protections\ReferenceProxy\RPBasic.cs" />
     <Compile Include="Protections\ReferenceProxy\RPHelper.cs" />
-    <Compile Include="Protections\StringEncoding\StringEncoding.cs" />
+    <Compile Include="Protections\ReferenceProxy\RPNormal.cs" />
+    <Compile Include="Protections\StringEncoding\BasicStringEncoding.cs" />
+    <Compile Include="Protections\StringEncoding\NormalStringEncoding.cs" />
+    <Compile Include="Protections\StringEncoding\RuntimeHelper.cs" />
+    <Compile Include="Protections\StringEncoding\StringHelper.cs" />
     <Compile Include="Protections\StringEncoding\StringEncodingProtection.cs" />
     <Compile Include="Register.cs" />
   </ItemGroup>

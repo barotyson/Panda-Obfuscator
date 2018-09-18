@@ -44,14 +44,19 @@
             this.darkLabel1 = new DarkUI.Controls.DarkLabel();
             this.darkTextBox1 = new DarkUI.Controls.DarkTextBox();
             this.darkButton1 = new DarkUI.Controls.DarkButton();
+            this.darkSectionPanel3 = new DarkUI.Controls.DarkSectionPanel();
+            this.basic = new DarkUI.Controls.DarkRadioButton();
+            this.normal = new DarkUI.Controls.DarkRadioButton();
             this.darkSectionPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.darkSectionPanel1.SuspendLayout();
+            this.darkSectionPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // darkSectionPanel2
             // 
             this.darkSectionPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(60)))), ((int)(((byte)(62)))));
+            this.darkSectionPanel2.Controls.Add(this.darkSectionPanel3);
             this.darkSectionPanel2.Controls.Add(this.darkLabel6);
             this.darkSectionPanel2.Controls.Add(this.pictureBox1);
             this.darkSectionPanel2.Controls.Add(this.darkButton4);
@@ -220,6 +225,36 @@
             this.darkButton1.Text = "...";
             this.darkButton1.Click += new System.EventHandler(this.darkButton1_Click);
             // 
+            // darkSectionPanel3
+            // 
+            this.darkSectionPanel3.Controls.Add(this.normal);
+            this.darkSectionPanel3.Controls.Add(this.basic);
+            this.darkSectionPanel3.Location = new System.Drawing.Point(633, 28);
+            this.darkSectionPanel3.Name = "darkSectionPanel3";
+            this.darkSectionPanel3.SectionHeader = "State";
+            this.darkSectionPanel3.Size = new System.Drawing.Size(163, 77);
+            this.darkSectionPanel3.TabIndex = 10;
+            // 
+            // basic
+            // 
+            this.basic.AutoSize = true;
+            this.basic.Checked = true;
+            this.basic.Location = new System.Drawing.Point(7, 30);
+            this.basic.Name = "basic";
+            this.basic.Size = new System.Drawing.Size(51, 17);
+            this.basic.TabIndex = 0;
+            this.basic.TabStop = true;
+            this.basic.Text = "Basic";
+            // 
+            // normal
+            // 
+            this.normal.AutoSize = true;
+            this.normal.Location = new System.Drawing.Point(7, 53);
+            this.normal.Name = "normal";
+            this.normal.Size = new System.Drawing.Size(58, 17);
+            this.normal.TabIndex = 1;
+            this.normal.Text = "Normal";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,7 +263,9 @@
             this.Controls.Add(this.darkSectionPanel2);
             this.Controls.Add(this.darkSectionPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "mainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PandaObfuscator";
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.darkSectionPanel2.ResumeLayout(false);
@@ -236,6 +273,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.darkSectionPanel1.ResumeLayout(false);
             this.darkSectionPanel1.PerformLayout();
+            this.darkSectionPanel3.ResumeLayout(false);
+            this.darkSectionPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -257,6 +296,9 @@
         public DarkUI.Controls.DarkButton darkButton4;
         public DarkUI.Controls.DarkLabel darkLabel6;
         public System.Windows.Forms.PictureBox pictureBox1;
+        private DarkUI.Controls.DarkSectionPanel darkSectionPanel3;
+        private DarkUI.Controls.DarkRadioButton normal;
+        private DarkUI.Controls.DarkRadioButton basic;
     }
 }
 

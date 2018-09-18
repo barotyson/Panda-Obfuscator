@@ -22,9 +22,9 @@ namespace Core
         }
         public List<PandaProtection> GetPandaProtections() { return _pandaContext.GetPandaProtection(); }
 
-        public bool runModules(PandaContext pandaContext)
+        public bool runModules(PandaState pandaState, PandaContext pandaContext)
         {
-            new PandaMarker().Execute(pandaContext);
+            new PandaMarker().Execute(pandaState, pandaContext);
             if (pandaContext.pandaIG.getIGModules() == null)
                 return false;
             if (pandaContext.pandaIG.getIGModules().Count == 0)
@@ -34,7 +34,7 @@ namespace Core
             {
                 foreach (PandaProtection panda in pandaContext.pandaIG.getIGModules())
                     if (p.Id == panda.Id)
-                        panda.Execute(pandaContext);
+                        panda.Execute(pandaState, pandaContext);
             }
 
 

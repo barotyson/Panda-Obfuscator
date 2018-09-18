@@ -10,7 +10,11 @@ namespace Core.Protections.IntMath
 {
     public class IntMath
     {
-        public static void Execute(PandaContext panda)
+        public IntMath(PandaContext pandaContext)
+        {
+            Execute(pandaContext);
+        }
+        public void Execute(PandaContext panda)
         {
             INTMHelper IMHelper = new INTMHelper();
             foreach (TypeDef type in panda.moduleDef.Types)

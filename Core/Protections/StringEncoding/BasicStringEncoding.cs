@@ -1,4 +1,5 @@
-﻿using dnlib.DotNet;
+﻿using Core.Helper.DnlibUtils;
+using dnlib.DotNet;
 using dnlib.DotNet.Emit;
 using System;
 using System.Collections.Generic;
@@ -8,9 +9,15 @@ using System.Threading.Tasks;
 
 namespace Core.Protections.StringEncoding
 {
-    public class StringEncoding
+    public class BasicStringEncoding
     {
-        public static void Encoding(PandaContext pandaContext)
+        public BasicStringEncoding(PandaContext pandaContext)
+        {
+            if (pandaContext != null)
+                Encoding(pandaContext);
+            new ArgumentNullException("PandaContext cannot be null!");
+        }
+        public void Encoding(PandaContext pandaContext)
         {
             foreach (TypeDef type in pandaContext.moduleDef.Types)
             {
@@ -31,8 +38,10 @@ namespace Core.Protections.StringEncoding
                             i += 4;
                         }
                     }
+                    DnlibUtils.Optimize(method);
                 }
             }
+
         }
     }
 }

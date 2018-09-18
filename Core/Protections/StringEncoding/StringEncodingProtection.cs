@@ -18,9 +18,18 @@ namespace Core.Protections.StringEncoding
 
         public override string Author => "CodeOfDark";
 
-        public override void Execute(PandaContext pandaContext)
+        public override void Execute(PandaState pandaState, PandaContext pandaContext)
         {
-            StringEncoding.Encoding(pandaContext);
+            switch (pandaState)
+            {
+                case PandaState.Basic:
+                    new BasicStringEncoding(pandaContext);
+                    break;
+                case PandaState.Normal:
+                    new NormalStringEncoding(pandaContext);
+                    break;
+            }
+            
         }
 
         public override void Register(PandaContext pandaContext)

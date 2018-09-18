@@ -16,9 +16,9 @@ namespace Core.Protections.ReferenceProxy
 
         public override string Author => "CodeOfDark";
 
-        public override void Execute(PandaContext pandaContext)
+        public override void Execute(PandaState pandaState, PandaContext pandaContext)
         {
-            ReferenceProxy.Execute(pandaContext);
+            new ReferenceProxy(pandaState, pandaContext);
         }
 
         public override void Register(PandaContext pandaContext)

@@ -17,7 +17,7 @@ namespace Core
 
         public override string Author => "CodeOfDark";
 
-        public override void Execute(PandaContext pandaContext)
+        public override void Execute(PandaState pandaState, PandaContext pandaContext)
         {
             pandaContext.moduleDef.GlobalType.NestedTypes.Add(new TypeDefUser("PandaObfuscator"));
         }
